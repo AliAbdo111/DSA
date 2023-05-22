@@ -4,10 +4,10 @@ using namespace std;
 
 
 struct Node {
-int data {} ;
+int data {} ; 
 Node* next{};
 Node(int data) :data(data){};
-};
+}; 
 
 // display using loop //////////////////////////////////////////////////////////////////
 // void Display(Node *head)
