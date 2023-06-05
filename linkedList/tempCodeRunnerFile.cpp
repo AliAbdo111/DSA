@@ -1,2 +1,2 @@
-nt();
-list.delete_front();
+
+	list.insert_end(1);
