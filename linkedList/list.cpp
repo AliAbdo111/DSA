@@ -180,6 +180,9 @@ public:
 		return nullptr;
 	}
 	Node* get_nth_from_back(int n) {
+		if(n<=0 ||n>length){
+			return nullptr;
+		}
 		n=length-n;
 	Node*nth=get_nth(n+1);
 	cout<< "the nth is : "<<nth->data<<endl;
@@ -199,7 +202,16 @@ public:
 
 		debug_verify_data_integrity();
 	}
+	bool is_same(const LinkedList &list ){
+		Node *h1 = list.head , *h2=head;
+		while(h1&& h2){
+		if(h1->data != h2->data) return false ;
+			else h1=h1->next ,h2=h2->next ;
+		}
+		cout<<"done"<<endl;
 
+		
+	}
 	void delete_nth_node(int n) {
 		if (n < 1 || n > length)
 			cout << "Error. No such nth node\n";
@@ -225,6 +237,14 @@ public:
 void test1() {
 	cout << "\n\ntest1\n";
 	LinkedList list;
+	LinkedList list1;
+
+	list1.insert_end(1);
+	list1.insert_end(2);
+	list1.insert_end(3);
+	list1.insert_end(4);
+	list1.insert_end(5);
+	list1.delete_nth_node(1);
 
 	list.insert_end(1);
 	list.insert_end(2);
@@ -233,10 +253,9 @@ void test1() {
 	list.insert_end(5);
 
 	list.delete_nth_node(1);
-
 	// some actions
 	list.print();
-
+list.is_same(list1);
 	string expected = "2 3 4 5";
 	string result = list.debug_to_string();
 	if (expected != result) {
@@ -324,9 +343,9 @@ list.get_nth(2);
 }
 
 int main() {
-	// test1();
+	test1();
 	// test2();
-	test3();
+	// test3();
 	// test4();
 
 
