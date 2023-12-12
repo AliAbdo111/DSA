@@ -28,6 +28,15 @@ int knapsack(int idx, int remains) {
 
 
 int main() {
+    //m_w=15Kg
+    //w={ 20,4 ,10,5}  {20 ,10,5,4
+    //v={100,19,30,27} {100,30,27.....
+    int fun(w, v, m_w){
+    if(w=0)
+        return 0
+
+
+    }
     cout<<"Hello world.....!!!";
 	return 0;
 }
